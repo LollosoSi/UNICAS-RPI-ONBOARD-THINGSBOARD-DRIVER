@@ -19,7 +19,7 @@ endif()
 include_directories(${MOSQUITTO_INCLUDE_DIR})
 
 # This project will output an executable file
-add_executable(${PROJECT_NAME} unicas_driver_uart_wheel_thingsboard.cpp SerialDevice.h SerialUNO.h SerialNANO.h UDPReceiver.h MQTTClient.h can.h)
+add_executable(${PROJECT_NAME} unicas_driver_uart_wheel_thingsboard.cpp SerialDevice.h SerialUNO.h SerialNANO.h UDPReceiver.h MQTTClient.h can.h VirtualKeyboard.h)
 
 target_link_libraries(${PROJECT_NAME} ${MOSQUITTO_LIBRARY})
 
