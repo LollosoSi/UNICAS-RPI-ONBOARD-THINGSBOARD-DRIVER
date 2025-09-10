@@ -5,7 +5,20 @@
 #include <iostream>
 #include <stdexcept>
 
+#include <fstream>
+
 #pragma once
+
+static void sendCommandToScript(const std::string& command) {
+    const char* fifo_path = "/tmp/stream_control_pipe";
+    std::ofstream pipe(fifo_path);
+    if (!pipe) {
+        std::cerr << "Errore: impossibile aprire la named pipe." << std::endl;
+        return;
+    }
+    pipe << command << std::endl;
+    pipe.close();
+}
 
 class VirtualKeyboard {
 private:

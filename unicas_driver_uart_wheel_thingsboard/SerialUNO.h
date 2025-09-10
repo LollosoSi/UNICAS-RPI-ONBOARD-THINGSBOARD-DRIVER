@@ -8,6 +8,7 @@
 #pragma once
 
 #include "SerialDevice.h"
+#include "VirtualKeyboard.h"
 
 #pragma pack(push, 1)
 struct uart_message {
@@ -47,6 +48,11 @@ class UnoSerial : public SerialDevice {
 				memcpy(&msg, data.data(), UART_MESSAGE_SIZE);
 				std::cout << "[UNO] Evento " << int(msg.enum_value_action)
 						<< " -> " << msg.content << std::endl;
+
+
+				if(msg.enum_value_action == PTT){
+					sendCommandToScript(msg.content != 0 ? "resume" : "pause");
+				}
 			}
 		}
 

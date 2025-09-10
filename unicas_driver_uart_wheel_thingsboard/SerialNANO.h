@@ -50,7 +50,7 @@ class NanoSerial : public SerialDevice {
 				// Do something with the can frame!
 				switch(msg.can_id){
 					default:
-						std::cout << "Ricevuto can e non so cosa farci: ID: " + msg.can_id + " Dati: " + msg.can_dlc + std::endl;
+						std::cout << "Ricevuto can e non so cosa farci: ID: " << msg.can_id << " Dati: " << msg.can_dlc << std::endl;
 						break;
 				}
 			}

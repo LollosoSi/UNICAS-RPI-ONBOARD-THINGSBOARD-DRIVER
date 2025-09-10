@@ -5,6 +5,8 @@
 #include "UDPReceiver.h"
 #include "MQTTClient.h"
 
+#include "VirtualKeyboard.h"
+
 #include <signal.h>
 #include <stdlib.h>
 #include <stdio.h>
